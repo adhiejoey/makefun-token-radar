@@ -1,11 +1,14 @@
 # Token Radar — best token launch radar
 
+[![make.fun](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/adhiejoey/makefun-token-radar/rank.svg)](https://make.fun/bounty/token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/adhiejoey/makefun-token-radar/reward.svg)](https://make.fun/bounty/token-radar-01)
+
 A radar for pre-token DeFi protocols: which ones are worth farming next, what
 their launch would be worth, and the concrete steps to farm each one. Built
 for the make.fun bounty
 [`token-radar-01`](https://make.fun/bounty/token-radar-01) — $1,325, deadline
-Mon 14 Dec 2026 10:00 UTC. **Local build only: nothing here has been submitted,
-paid for, or published.**
+Mon 14 Dec 2026 10:00 UTC.
 
 ## What it does
 
