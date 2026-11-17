@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Token Radar</h1>
+    <p class="sub">Which pre-token protocol is worth farming next — and what to do about it.</p>
+  </div>
+  <p id="meta" class="meta">Loading the sealed snapshot…</p>
+</header>
+<main>
+  <section id="stats" class="stats" aria-label="Board summary"></section>
+  <section class="method" aria-label="How the value is worked out">
+    <h2>How the implied value is worked out</h2>
+    <p id="method-text"></p>
+    <div class="sandbox">
+      <label>Base multiple <output id="base-out"></output><input id="base-slider" type="range" min="0.05" max="0.5" step="0.01" value="0.22"></label>
+      <label>Growth weight <output id="growth-out"></output><input id="growth-slider" type="range" min="0" max="1" step="0.05" value="0.6"></label>
+      <button id="reset-model" type="button">Reset to radar-2</button>
+      <span class="note">Sliders re-rank this page only. board.json is fixed by main.ts.</span>
+    </div>
+  </section>
+  <section class="controls" aria-label="Filters">
+    <label>Search <input id="q" type="search" placeholder="Protocol name or slug…" autocomplete="off"></label>
+    <label>Chain <select id="chain"><option value="">All chains</option></select></label>
+    <label>Category <select id="category"><option value="">All categories</option></select></label>
+    <label>List <select id="list"><option value="all">Whole board</option><option value="watchlist">Watchlist only</option><option value="early">Early finds only</option></select></label>
+    <label>Sort by <select id="sort"><option value="implied">Implied value</option><option value="tvl">TVL</option><option value="growth">7-day growth</option><option value="age">Age with no token</option><option value="name">Name A–Z</option></select></label>
+    <label class="check"><input id="min-tvl" type="checkbox"> TVL ≥ $100M only</label>
+  </section>
+  <nav class="views" aria-label="Views">
+    <button id="view-board" type="button" class="active">Board</button>
+    <button id="view-live" type="button">Live tokens — already trading</button>
+    <button id="view-setaside" type="button">Set aside — why not ranked</button>
+  </nav>
+  <p id="count" class="count" aria-live="polite"></p>
+  <section id="detail" class="detail" hidden aria-label="Protocol detail"></section>
+  <div class="table-wrap">
+    <table id="board-table">
+      <thead><tr><th>#</th><th>Protocol</th><th>Chains</th><th>Category</th><th>TVL</th><th>7d</th><th>Age</th><th>Implied value</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="warn">“Records no token” is what the snapshot says — it is not proof a protocol has none, and nothing here promises a token will ever launch. Never pay anyone to claim an airdrop, and never follow a claim link from a message.</p>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
